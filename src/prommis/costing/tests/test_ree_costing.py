@@ -4599,9 +4599,7 @@ def test_location():
             location=location,
         )
 
-        m.fs.coal = pyo.Var(
-            m.fs.time, initialize=1, units=pyunits.tonne / pyunits.h
-        )
+        m.fs.coal = pyo.Var(m.fs.time, initialize=1, units=pyunits.tonne / pyunits.h)
         m.fs.coal.fix()
 
         m.fs.natural_gas = pyo.Var(
@@ -4609,14 +4607,10 @@ def test_location():
         )
         m.fs.natural_gas.fix()
 
-        m.fs.water = pyo.Var(
-            m.fs.time, initialize=1, units=pyunits.gallon / pyunits.s
-        )
+        m.fs.water = pyo.Var(m.fs.time, initialize=1, units=pyunits.gallon / pyunits.s)
         m.fs.water.fix()
 
-        m.fs.chemicals = pyo.Var(
-            m.fs.time, initialize=1, units=pyunits.kg / pyunits.s
-        )
+        m.fs.chemicals = pyo.Var(m.fs.time, initialize=1, units=pyunits.kg / pyunits.s)
         m.fs.chemicals.fix()
 
         m.fs.nonharzardous_waste_disposal = pyo.Var(

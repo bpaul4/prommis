@@ -114,6 +114,7 @@ class REECostingData(QGESSCostingData):
     """
     REE Costing Class
     """
+
     # Register currency and conversion rates based on CEPCI
     register_ree_currency_units()
 
