@@ -4425,6 +4425,7 @@ def test_REE_costing_variableOM_resourcenotinpricelist():
     m.fs.H2O = pyo.Var(m.fs.time, initialize=1000, units=pyunits.gallon / pyunits.hr)
     m.fs.H2O.fix()
 
+    # TODO fix typo in regex, harzardous
     with pytest.raises(
         AttributeError,
         match="A resource was included that does not contain a price. Prices "
@@ -4613,10 +4614,10 @@ def test_location():
         m.fs.chemicals = pyo.Var(m.fs.time, initialize=1, units=pyunits.kg / pyunits.s)
         m.fs.chemicals.fix()
 
-        m.fs.nonharzardous_waste_disposal = pyo.Var(
+        m.fs.nonhazardous_waste_disposal = pyo.Var(
             m.fs.time, initialize=1, units=pyunits.kg / pyunits.s
         )
-        m.fs.nonharzardous_waste_disposal.fix()
+        m.fs.nonhazardous_waste_disposal.fix()
 
         m.fs.pure_product = pyo.Var(
             m.fs.time, initialize=1, units=pyunits.kg / pyunits.s
@@ -4656,8 +4657,8 @@ def test_location():
                 "water": m.fs.water,
                 "chemicals1": m.fs.chemicals,
                 "chemicals2": m.fs.chemicals,
-                "waste1": m.fs.nonharzardous_waste_disposal,
-                "waste2": m.fs.nonharzardous_waste_disposal,
+                "waste1": m.fs.nonhazardous_waste_disposal,
+                "waste2": m.fs.nonhazardous_waste_disposal,
             },  # for annual OPEX costs
             resource_prices={
                 "coal1": 1 * pyunits.USD_2018 / pyunits.tonne,
